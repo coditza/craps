@@ -1,9 +1,10 @@
-def multi(max, mapping):
+def multi(max, mapping, separator):
+    result = []
     for i in range(1, max + 1):
         fbzz = ''.join([mapping[x] for x in mapping if i % x == 0])
-        print(fbzz if len(fbzz) else i)
+        result.append(fbzz if len(fbzz) else str(i))
+    return separator.join(result)
 
 
 if __name__ == '__main__':
-    multi(15, {3: 'Fizz', 5: 'Buzz'})
-    multi(15, {2: 'Two', 3: 'Three', 5: 'Five'})
+    print("USAGE: multi(max, mapping, separator) -> string")
